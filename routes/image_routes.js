@@ -13,7 +13,9 @@ const uploads = multer({ storage:storage })
 const router = express.Router();
 
 const {upload} = require("../controllers/upload_controller");
+const {addimage} = require("../controllers/add_image_controller");
 
 router.post("/upload",uploads.single("picture"), upload);
+router.post("/add", addimage);
 
 module.exports = router;

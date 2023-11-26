@@ -32,6 +32,7 @@ migrate_working_dir/
 .pub/
 /build/
 /node_modules/
+/uploads/
 .env
 
 # Symbolication related
