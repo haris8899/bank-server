@@ -15,9 +15,11 @@ const router = express.Router();
 const {upload} = require("../controllers/upload_controller");
 const {addimage} = require("../controllers/add_image_controller");
 const {getallimage} = require("../controllers/get_all_image_data_controller");
+const {getimage} = require("../controllers/get_image_data_controller");
 
 router.post("/upload",uploads.single("picture"), upload);
 router.post("/add", addimage);
-router.get("/getall",getallimage)
+router.get("/getall",getallimage);
+router.get("/get",getimage)
 
 module.exports = router;
