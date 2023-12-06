@@ -1,13 +1,13 @@
 const client = require("../configs/database");
 
 exports.addimage = async (req,res) =>{
-    const {created_at,locationId,image_category,image_path} = req.body;
+    const {created_at,location_id,image_category_id,image_path} = req.body;
     try {
         var query = "Insert into location_images(created_at,location_id,image_category_id,image_path) VALUES (to_timestamp($1),$2,$3,$4);";
-        const image = {created_at,locationId,image_category,image_path};
+        const image = {created_at,location_id,image_category_id,image_path};
         client.query(
             query,
-            [image.created_at,image.locationId, image.image_category, image.image_path],
+            [image.created_at,image.location_id, image.image_category_id, image.image_path],
             (err) => {
               if (err) {
                 flag = 0; //If data is not inserted is not inserted to database assigning flag as 0/false.
