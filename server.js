@@ -25,9 +25,11 @@ app.get("/", (req, res) => {
 
 const  user  =  require("./routes/user_routes");
 const image = require("./routes/image_routes")
+const location = require("./routes/location_routes");
 
 app.use("/user",  user);
 app.use("/image",image);
+app.use("/location",location);
 
 app.listen(port, () => {
 
